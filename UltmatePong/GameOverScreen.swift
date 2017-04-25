@@ -19,13 +19,12 @@ class GameOverScreen: SKScene {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadAd"), object: nil)
     }
     override func didMove(to view: SKView) {
-        var DicideInpulseDirection = Int(arc4random_uniform(UInt32(3))) + 1
+        var DicideInpulseDirection = Int(arc4random_uniform(UInt32(2))) + 1
         
         switch(DicideInpulseDirection){
         case 1:
             showAdNow()
         case 2: break
-        case 3: break
         default:
             showAdNow()
         }

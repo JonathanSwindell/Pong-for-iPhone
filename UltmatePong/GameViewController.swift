@@ -12,22 +12,10 @@ import GameplayKit
 
 class GameViewController: UIViewController, AmazonAdInterstitialDelegate{
 
-    var interstitial: AmazonAdInterstitial!
-    let options = AmazonAdOptions()
+   
     override func viewDidLoad() {
-        NotificationCenter.default.addObserver(self, selector: #selector(GameViewController.showAmazonAd), name: NSNotification.Name(rawValue: "loadAd"), object: nil)
-
-        super.viewDidLoad()
         
-        interstitial = AmazonAdInterstitial()
-        interstitial.delegate = self
-
-        
-        //options.isTestRequest = true
-
-        interstitial.load(options)
-
-
+            super.viewDidLoad()
         
             if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
@@ -45,14 +33,6 @@ class GameViewController: UIViewController, AmazonAdInterstitialDelegate{
         }
     }
 
-    func showAmazonAd() {
-        interstitial.present(from: self)
-    }
-    
-    func interstitialDidDismiss(_ interstitial: AmazonAdInterstitial!) {
-            interstitial.load(options)
-        }
-    
     override var shouldAutorotate: Bool {
         return true
     }

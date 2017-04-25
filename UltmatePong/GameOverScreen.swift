@@ -15,20 +15,8 @@ class GameOverScreen: SKScene {
         var ThemesButton:SKSpriteNode!
         var StoreButton:SKSpriteNode!
     
-    func showAdNow() {
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadAd"), object: nil)
-    }
-    override func didMove(to view: SKView) {
-        var DicideInpulseDirection = Int(arc4random_uniform(UInt32(2))) + 1
-        
-        switch(DicideInpulseDirection){
-        case 1:
-            showAdNow()
-        case 2: break
-        default:
-            showAdNow()
-        }
-        
+        override func didMove(to view: SKView) {
+                
         ResultsButton = self.childNode(withName: "returnButton") as! SKSpriteNode
         ResultLabel = self.childNode(withName: "results") as! SKLabelNode
         switch GameScene.whoWon {

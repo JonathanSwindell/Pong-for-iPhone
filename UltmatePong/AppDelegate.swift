@@ -12,17 +12,10 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var adOptions = AmazonAdOptions()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        AmazonAdRegistration.shared().setAppKey("f8d080e73f674d70ab004630b6d80e80")
-        
-        //adOptions.isTestRequest = true
-        //AmazonAdRegistration.shared().setLogging(true)
-        
-
         return true
     }
 

@@ -20,18 +20,6 @@
 		7F278F851EAD56C400F2A4A9 /* MenuScreen.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7F278F761EAD56C400F2A4A9 /* MenuScreen.sks */; };
 		7F278F861EAD56C400F2A4A9 /* MenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F278F771EAD56C400F2A4A9 /* MenuScreen.swift */; };
 		7F278F871EAD56C400F2A4A9 /* prstart.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F278F791EAD56C400F2A4A9 /* prstart.ttf */; };
-		7F278FB31EAD80E000F2A4A9 /* AmazonAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F278FB21EAD80E000F2A4A9 /* AmazonAd.framework */; };
-		7FE7AC181EAAB7CD00ABC66A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE7AC161EAAB74500ABC66A /* AdSupport.framework */; };
-		7FE7AC231EAAB7CD00ABC66A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE7AC191EAAB7CD00ABC66A /* CoreLocation.framework */; };
-		7FE7AC241EAAB7CD00ABC66A /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE7AC1A1EAAB7CD00ABC66A /* CoreTelephony.framework */; };
-		7FE7AC251EAAB7CD00ABC66A /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE7AC1B1EAAB7CD00ABC66A /* EventKit.framework */; };
-		7FE7AC261EAAB7CD00ABC66A /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE7AC1C1EAAB7CD00ABC66A /* EventKitUI.framework */; };
-		7FE7AC271EAAB7CD00ABC66A /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE7AC1D1EAAB7CD00ABC66A /* JavaScriptCore.framework */; };
-		7FE7AC281EAAB7CD00ABC66A /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE7AC1E1EAAB7CD00ABC66A /* MediaPlayer.framework */; };
-		7FE7AC291EAAB7CD00ABC66A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE7AC1F1EAAB7CD00ABC66A /* QuartzCore.framework */; };
-		7FE7AC2A1EAAB7CD00ABC66A /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE7AC201EAAB7CD00ABC66A /* SafariServices.framework */; };
-		7FE7AC2B1EAAB7CD00ABC66A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE7AC211EAAB7CD00ABC66A /* StoreKit.framework */; };
-		7FE7AC2C1EAAB7CD00ABC66A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE7AC221EAAB7CD00ABC66A /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +36,6 @@
 		7F278F751EAD56C400F2A4A9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = UltmatePong/Info.plist; sourceTree = "<group>"; };
 		7F278F761EAD56C400F2A4A9 /* MenuScreen.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = MenuScreen.sks; path = UltmatePong/MenuScreen.sks; sourceTree = "<group>"; };
 		7F278F771EAD56C400F2A4A9 /* MenuScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuScreen.swift; path = UltmatePong/MenuScreen.swift; sourceTree = "<group>"; };
-		7F278F781EAD56C400F2A4A9 /* Ping-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Ping-Bridging-Header.h"; path = "UltmatePong/Ping-Bridging-Header.h"; sourceTree = "<group>"; };
 		7F278F791EAD56C400F2A4A9 /* prstart.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = prstart.ttf; path = UltmatePong/prstart.ttf; sourceTree = "<group>"; };
 		7F278FB21EAD80E000F2A4A9 /* AmazonAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AmazonAd.framework; sourceTree = "<group>"; };
 		7F89A1641E6305B2009D0A73 /* Ultmate Pong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ultmate Pong.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,18 +57,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FE7AC231EAAB7CD00ABC66A /* CoreLocation.framework in Frameworks */,
-				7FE7AC241EAAB7CD00ABC66A /* CoreTelephony.framework in Frameworks */,
-				7FE7AC251EAAB7CD00ABC66A /* EventKit.framework in Frameworks */,
-				7FE7AC261EAAB7CD00ABC66A /* EventKitUI.framework in Frameworks */,
-				7FE7AC271EAAB7CD00ABC66A /* JavaScriptCore.framework in Frameworks */,
-				7F278FB31EAD80E000F2A4A9 /* AmazonAd.framework in Frameworks */,
-				7FE7AC281EAAB7CD00ABC66A /* MediaPlayer.framework in Frameworks */,
-				7FE7AC291EAAB7CD00ABC66A /* QuartzCore.framework in Frameworks */,
-				7FE7AC2A1EAAB7CD00ABC66A /* SafariServices.framework in Frameworks */,
-				7FE7AC2B1EAAB7CD00ABC66A /* StoreKit.framework in Frameworks */,
-				7FE7AC2C1EAAB7CD00ABC66A /* SystemConfiguration.framework in Frameworks */,
-				7FE7AC181EAAB7CD00ABC66A /* AdSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,7 +104,6 @@
 				7F278F751EAD56C400F2A4A9 /* Info.plist */,
 				7F278F761EAD56C400F2A4A9 /* MenuScreen.sks */,
 				7F278F771EAD56C400F2A4A9 /* MenuScreen.swift */,
-				7F278F781EAD56C400F2A4A9 /* Ping-Bridging-Header.h */,
 				7F278F791EAD56C400F2A4A9 /* prstart.ttf */,
 				7F278FB21EAD80E000F2A4A9 /* AmazonAd.framework */,
 				7FE7AC191EAAB7CD00ABC66A /* CoreLocation.framework */,
@@ -362,7 +336,7 @@
 					"$(OTHER_LDFLAGS)",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bluetomcat.ping;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bluetomcat.ping-pro";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_NAME)/Ping-Bridging-Header.h";
@@ -387,7 +361,7 @@
 					"$(OTHER_LDFLAGS)",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bluetomcat.ping;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bluetomcat.ping-pro";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_NAME)/Ping-Bridging-Header.h";

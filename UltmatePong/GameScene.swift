@@ -76,15 +76,15 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
             DispatchQueue.main.asyncAfter(deadline: timer) {
                 switch(DicideInpulseDirection){
                 case 1:
-                    self.ball.physicsBody?.applyImpulse(CGVector(dx: 300, dy: 300))
+                    self.ball.physicsBody?.applyImpulse(CGVector(dx: 375, dy: 375))
                 case 2:
-                    self.ball.physicsBody?.applyImpulse(CGVector(dx: -300, dy: -300))
+                    self.ball.physicsBody?.applyImpulse(CGVector(dx: -375, dy: -375))
                 case 3:
-                    self.ball.physicsBody?.applyImpulse(CGVector(dx: -300, dy: 300))
+                    self.ball.physicsBody?.applyImpulse(CGVector(dx: -375, dy: 375))
                 case 4:
-                    self.ball.physicsBody?.applyImpulse(CGVector(dx: 300, dy: -300))
+                    self.ball.physicsBody?.applyImpulse(CGVector(dx: 375, dy: -375))
                 default:
-                    self.ball.physicsBody?.applyImpulse(CGVector(dx: 300, dy: 300))
+                    self.ball.physicsBody?.applyImpulse(CGVector(dx: 375, dy: 375))
                 }
                 
             }
@@ -99,29 +99,29 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
             score[0] += 1
             switch(DicideInpulseDirection){
             case 1:
-                self.ball.physicsBody?.applyImpulse(CGVector(dx: 300, dy: 300))
+                self.ball.physicsBody?.applyImpulse(CGVector(dx: 375, dy: 375))
             case 2:
-                self.ball.physicsBody?.applyImpulse(CGVector(dx: -300, dy: -300))
+                self.ball.physicsBody?.applyImpulse(CGVector(dx: -375, dy: -375))
             case 3:
-                self.ball.physicsBody?.applyImpulse(CGVector(dx: -300, dy: 300))
+                self.ball.physicsBody?.applyImpulse(CGVector(dx: -375, dy: 375))
             case 4:
-                self.ball.physicsBody?.applyImpulse(CGVector(dx: 300, dy: -300))
+                self.ball.physicsBody?.applyImpulse(CGVector(dx: 375, dy: -375))
             default:
-                self.ball.physicsBody?.applyImpulse(CGVector(dx: 300, dy: 300))
+                self.ball.physicsBody?.applyImpulse(CGVector(dx: 375, dy: 375))
             }
         }else if PlayerWhoWon == enemy{
             score[1] += 1
             switch(DicideInpulseDirection){
             case 1:
-                self.ball.physicsBody?.applyImpulse(CGVector(dx: 300, dy: 300))
+                self.ball.physicsBody?.applyImpulse(CGVector(dx: 375, dy: 375))
             case 2:
-                self.ball.physicsBody?.applyImpulse(CGVector(dx: -300, dy: -300))
+                self.ball.physicsBody?.applyImpulse(CGVector(dx: -375, dy: -375))
             case 3:
-                self.ball.physicsBody?.applyImpulse(CGVector(dx: -300, dy: 300))
+                self.ball.physicsBody?.applyImpulse(CGVector(dx: -375, dy: 375))
             case 4:
-                self.ball.physicsBody?.applyImpulse(CGVector(dx: 300, dy: -300))
+                self.ball.physicsBody?.applyImpulse(CGVector(dx: 375, dy: -375))
             default:
-                self.ball.physicsBody?.applyImpulse(CGVector(dx: 300, dy: 300))
+                self.ball.physicsBody?.applyImpulse(CGVector(dx: 375, dy: 375))
             }
             
         }
@@ -133,7 +133,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches{
             let location = touch.location(in: self)
-            main.run(SKAction.moveTo(x: location.x, duration: 0.25))
+            main.run(SKAction.moveTo(x: location.x, duration: 0.37))
         }
     }
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -142,15 +142,15 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
             
             if currentGameType == .player2{
                 if location.y > 0{
-                    enemy.run(SKAction.moveTo(x: location.x, duration: 0.25))
+                    enemy.run(SKAction.moveTo(x: location.x, duration: 0.37))
                 }
                 
                 if location.y < 0{
-                    main.run(SKAction.moveTo(x: location.x, duration: 0.25))
+                    main.run(SKAction.moveTo(x: location.x, duration: 0.37))
                 }
             }
             else {
-                main.run(SKAction.moveTo(x: location.x, duration: 0.25))
+                main.run(SKAction.moveTo(x: location.x, duration: 0.37))
             }
             
         }
@@ -161,13 +161,13 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
     override func update(_ currentTime: TimeInterval) {
         switch currentGameType {
         case .easy:
-            enemy.run(SKAction.moveTo(x: ball.position.x, duration: 0.95))
+            enemy.run(SKAction.moveTo(x: ball.position.x, duration: 1.1))
             break
         case .medium:
-            enemy.run(SKAction.moveTo(x: ball.position.x, duration: 0.55))
+            enemy.run(SKAction.moveTo(x: ball.position.x, duration: 0.8))
             break
         case .hard:
-            enemy.run(SKAction.moveTo(x: ball.position.x, duration: 0.4))
+            enemy.run(SKAction.moveTo(x: ball.position.x, duration: 0.5))
             break
         case .player2:
             
@@ -194,7 +194,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
         
         
         
-        if(score[0] >= 7){
+        if(score[0] >= 3){
             if (currentGameType == .player2){
                 GameScene.whoWon = 3
             }else{
@@ -203,7 +203,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
             let NextScreen = GameOverScreen(fileNamed: "GameOverScreen")
             NextScreen?.scaleMode = .aspectFill
             self.scene?.view?.presentScene(NextScreen!)
-        }else if(score[1] >= 7){
+        }else if(score[1] >= 3){
             if (currentGameType == .player2){
                 GameScene.whoWon = 2
             }else{

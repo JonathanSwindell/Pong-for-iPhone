@@ -37,19 +37,7 @@
 		7F278F761EAD56C400F2A4A9 /* MenuScreen.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = MenuScreen.sks; path = UltmatePong/MenuScreen.sks; sourceTree = "<group>"; };
 		7F278F771EAD56C400F2A4A9 /* MenuScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuScreen.swift; path = UltmatePong/MenuScreen.swift; sourceTree = "<group>"; };
 		7F278F791EAD56C400F2A4A9 /* prstart.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = prstart.ttf; path = UltmatePong/prstart.ttf; sourceTree = "<group>"; };
-		7F278FB21EAD80E000F2A4A9 /* AmazonAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AmazonAd.framework; sourceTree = "<group>"; };
 		7F89A1641E6305B2009D0A73 /* Ultmate Pong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ultmate Pong.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7FE7AC161EAAB74500ABC66A /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
-		7FE7AC191EAAB7CD00ABC66A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		7FE7AC1A1EAAB7CD00ABC66A /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
-		7FE7AC1B1EAAB7CD00ABC66A /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
-		7FE7AC1C1EAAB7CD00ABC66A /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
-		7FE7AC1D1EAAB7CD00ABC66A /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		7FE7AC1E1EAAB7CD00ABC66A /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		7FE7AC1F1EAAB7CD00ABC66A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		7FE7AC201EAAB7CD00ABC66A /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
-		7FE7AC211EAAB7CD00ABC66A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		7FE7AC221EAAB7CD00ABC66A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,18 +93,6 @@
 				7F278F761EAD56C400F2A4A9 /* MenuScreen.sks */,
 				7F278F771EAD56C400F2A4A9 /* MenuScreen.swift */,
 				7F278F791EAD56C400F2A4A9 /* prstart.ttf */,
-				7F278FB21EAD80E000F2A4A9 /* AmazonAd.framework */,
-				7FE7AC191EAAB7CD00ABC66A /* CoreLocation.framework */,
-				7FE7AC1A1EAAB7CD00ABC66A /* CoreTelephony.framework */,
-				7FE7AC1B1EAAB7CD00ABC66A /* EventKit.framework */,
-				7FE7AC1C1EAAB7CD00ABC66A /* EventKitUI.framework */,
-				7FE7AC1D1EAAB7CD00ABC66A /* JavaScriptCore.framework */,
-				7FE7AC1E1EAAB7CD00ABC66A /* MediaPlayer.framework */,
-				7FE7AC1F1EAAB7CD00ABC66A /* QuartzCore.framework */,
-				7FE7AC201EAAB7CD00ABC66A /* SafariServices.framework */,
-				7FE7AC211EAAB7CD00ABC66A /* StoreKit.framework */,
-				7FE7AC221EAAB7CD00ABC66A /* SystemConfiguration.framework */,
-				7FE7AC161EAAB74500ABC66A /* AdSupport.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -148,7 +124,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = BlueTomCat;
 				TargetAttributes = {
 					7F89A1631E6305B2009D0A73 = {
@@ -238,15 +214,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -287,15 +271,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -336,9 +328,10 @@
 					"$(OTHER_LDFLAGS)",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bluetomcat.ping-pro";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bluetomcat.pong;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_NAME)/Ping-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Ping-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -361,9 +354,10 @@
 					"$(OTHER_LDFLAGS)",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bluetomcat.ping-pro";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bluetomcat.pong;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_NAME)/Ping-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Ping-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class GameViewController: UIViewController, AmazonAdInterstitialDelegate{
+class GameViewController: UIViewController{
 
    
     override func viewDidLoad() {

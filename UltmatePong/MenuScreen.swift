@@ -35,7 +35,6 @@ class MenuScreen: SKScene {
         }else{
             DifficultyLabel.text = "Easy"
         }
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -49,11 +48,14 @@ class MenuScreen: SKScene {
                 self.scene?.view?.presentScene(gameScene!)
             }
             if nodesArray.first?.name == "difficultyButton"{
+                let ButtonTapSound = SKAction.playSoundFileNamed("Selection",waitForCompletion: false)
+                run(ButtonTapSound)
                 changeDifficulty()
             }
         }
     }
   
+    
     func changeDifficulty(){
         let userDefaults = UserDefaults.standard
         if  (DifficultyLabel.text == "Easy"){

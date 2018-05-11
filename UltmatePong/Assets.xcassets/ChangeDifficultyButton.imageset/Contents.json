@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "ChangeModeButton.png",
+      "filename" : "ChangeDifficultyButton.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "ChangeModeButton@2x.png",
+      "filename" : "ChangeDifficultyButton@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "ChangeModeButton@3x.png",
+      "filename" : "ChangeDifficultyButton@3x.png",
       "scale" : "3x"
     }
   ],

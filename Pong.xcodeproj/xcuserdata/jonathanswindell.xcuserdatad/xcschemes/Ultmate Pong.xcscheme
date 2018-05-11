@@ -17,7 +17,7 @@
                BlueprintIdentifier = "7F89A1631E6305B2009D0A73"
                BuildableName = "Ultmate Pong.app"
                BlueprintName = "Ultmate Pong"
-               ReferencedContainer = "container:UltmatePong.xcodeproj">
+               ReferencedContainer = "container:Pong.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
             BlueprintIdentifier = "7F89A1631E6305B2009D0A73"
             BuildableName = "Ultmate Pong.app"
             BlueprintName = "Ultmate Pong"
-            ReferencedContainer = "container:UltmatePong.xcodeproj">
+            ReferencedContainer = "container:Pong.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -58,7 +58,7 @@
             BlueprintIdentifier = "7F89A1631E6305B2009D0A73"
             BuildableName = "Ultmate Pong.app"
             BlueprintName = "Ultmate Pong"
-            ReferencedContainer = "container:UltmatePong.xcodeproj">
+            ReferencedContainer = "container:Pong.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -77,7 +77,7 @@
             BlueprintIdentifier = "7F89A1631E6305B2009D0A73"
             BuildableName = "Ultmate Pong.app"
             BlueprintName = "Ultmate Pong"
-            ReferencedContainer = "container:UltmatePong.xcodeproj">
+            ReferencedContainer = "container:Pong.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

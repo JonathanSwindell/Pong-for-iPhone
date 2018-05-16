@@ -12,12 +12,14 @@ class MenuScreen: SKScene {
     var newGameButton:SKSpriteNode!
     var difficultyButton:SKSpriteNode!
     var DifficultyLabel:SKLabelNode!
+    var HighScoreLabel:SKLabelNode!
     
     override func didMove(to view: SKView) {
         newGameButton = self.childNode(withName: "newGameButton") as! SKSpriteNode
         difficultyButton = self.childNode(withName: "difficultyButton") as! SKSpriteNode
         DifficultyLabel = self.childNode(withName: "difficultyLabel") as! SKLabelNode
-
+        HighScoreLabel = self.childNode(withName: "highScoreLabel") as! SKLabelNode
+        HighScoreLabel.isHidden = true
         
         newGameButton.texture = SKTexture(imageNamed: "NewGameButton")
         difficultyButton.texture = SKTexture(imageNamed: "ChangeDifficultyButton")
@@ -32,7 +34,13 @@ class MenuScreen: SKScene {
             DifficultyLabel.text = "Hard"
         }else if(userDefaults.integer(forKey: "Mode")==3){
             DifficultyLabel.text = "2 Players"
-        }else{
+        }else if(userDefaults.integer(forKey: "Mode")==4){
+            DifficultyLabel.text = "Endless"
+            //Add high score label
+            HighScoreLabel.text = "High Score: " + String(userDefaults.integer(forKey: "HighScore"))
+            HighScoreLabel.isHidden = false
+        }
+        else{
             DifficultyLabel.text = "Easy"
         }
     }
@@ -68,6 +76,13 @@ class MenuScreen: SKScene {
             DifficultyLabel.text = "2 Players"
             userDefaults.set(3, forKey: "Mode")
         }else if(DifficultyLabel.text == "2 Players"){
+            DifficultyLabel.text = "Endless"
+            HighScoreLabel.text = "High Score: " + String(userDefaults.integer(forKey: "HighScore"))
+            HighScoreLabel.isHidden = false
+            userDefaults.set(4, forKey: "Mode")
+        }
+        else if(DifficultyLabel.text == "Endless"){
+            HighScoreLabel.isHidden = true
             DifficultyLabel.text = "Easy"
             userDefaults.set(0, forKey: "Mode")
         }

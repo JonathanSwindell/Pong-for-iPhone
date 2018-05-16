@@ -13,6 +13,7 @@ enum gameType {
     case medium
     case hard
     case player2
+    case endless
 }
 
 class GameScene: SKScene , SKPhysicsContactDelegate{
@@ -37,13 +38,15 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
     //gameplay tweaking varibles
     let initalBallDelay = 1.5
     let subsequentBallDelay = 0.85
-    let ballVelocity:Int = 385
-    var playerControlDelay = 0.45
-    var easyAIDelay = 1.075 //Balenced
-    var mediumAIDelay = 0.9 //Balenced
-    var hardAIDelay = 0.65 //Balenced
-    var minVariation = 0.0 //Dont change this without think through the consequences.
-    var maxVariation = 0.765 //Dont change this without think through the consequences.
+    let ballVelocity:Int = 395
+    let TwoPlayerMatchControlDelay = 0.45
+    let SinglePlayerControlDelay = 0.275
+    let easyAIDelay = 1.075 //Balenced
+    let mediumAIDelay = 0.9 //Balenced
+    let hardAIDelay = 0.835 
+    let endlessAIDelay = 1.0
+    let minVariation = 0.0 //Dont change this without think through the consequences.
+    let maxVariation = 0.765 //Dont change this without think through the consequences.
     
     //Perfectly balenced like all things should be... quote - Thanos 2018
     
@@ -59,6 +62,8 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
             currentGameType = gameType.hard
         }else if(userDefaults.integer(forKey: "Mode")==3){
             currentGameType = gameType.player2
+        }else if(userDefaults.integer(forKey: "Mode")==4){
+            currentGameType = gameType.endless
         }
         
         topLabel = self.childNode(withName: "topLabel") as! SKLabelNode
@@ -69,6 +74,11 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
         enemy.position.y = (self.frame.height / 2) - 50
         main = self.childNode(withName: "main") as! SKSpriteNode
         main.position.y = (-self.frame.height / 2) + 50
+        
+        if(currentGameType == gameType.endless){
+            topLabel.isHidden = true
+            bottomLabel.position = CGPoint(x: 0, y: 25)
+        }
         
         let border  = SKPhysicsBody(edgeLoopFrom: self.frame)
         
@@ -148,7 +158,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches{
             let location = touch.location(in: self)
-            main.run(SKAction.moveTo(x: location.x, duration: playerControlDelay))
+            main.run(SKAction.moveTo(x: location.x, duration: SinglePlayerControlDelay))
         }
     }
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -157,15 +167,15 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
             
             if currentGameType == .player2{
                 if location.y > 0{
-                    enemy.run(SKAction.moveTo(x: location.x, duration: playerControlDelay))
+                    enemy.run(SKAction.moveTo(x: location.x, duration: TwoPlayerMatchControlDelay))
                 }
                 
                 if location.y < 0{
-                    main.run(SKAction.moveTo(x: location.x, duration: playerControlDelay))
+                    main.run(SKAction.moveTo(x: location.x, duration: TwoPlayerMatchControlDelay))
                 }
             }
             else {
-                main.run(SKAction.moveTo(x: location.x, duration: playerControlDelay))
+                main.run(SKAction.moveTo(x: location.x, duration: SinglePlayerControlDelay))
             }
             
         }
@@ -183,10 +193,12 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
             enemy.run(SKAction.moveTo(x: ball.position.x, duration: mediumAIDelay + randomVariation))
             break
         case .hard:
-            enemy.run(SKAction.moveTo(x: ball.position.x, duration: mediumAIDelay + randomVariation))
+            enemy.run(SKAction.moveTo(x: ball.position.x, duration: hardAIDelay + randomVariation))
             break
         case .player2:
-            
+            break
+        case .endless:
+            enemy.run(SKAction.moveTo(x: ball.position.x, duration: endlessAIDelay + randomVariation))
             break
         }
         
@@ -213,7 +225,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
         //Enemy's score is score[1]
         
         
-        
+        if(!(currentGameType == gameType.endless)){
         if(score[0] >= 5){
             if (currentGameType == .player2){
                 GameScene.whoWon = 3
@@ -232,8 +244,24 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
             let NextScreen = GameOverScreen(fileNamed: "GameOverScreen")
             NextScreen?.scaleMode = .aspectFill
             self.scene?.view?.presentScene(NextScreen!)
+            }
         }
+        if(currentGameType == gameType.endless){
+            if(score[1] >= 1){
+                GameScene.whoWon = 4
+                if(userDefaults.integer(forKey: "HighScore") < score[0]){
+                    userDefaults.set(score[0], forKey: "HighScore")
+                }
+                userDefaults.set(score[0], forKey: "CurrentScore")
+                let NextScreen = GameOverScreen(fileNamed: "GameOverScreen")
+                NextScreen?.scaleMode = .aspectFill
+                self.scene?.view?.presentScene(NextScreen!)
+                
+            }
+        }
+        
     }
+    
     func randomDouble(min: Double, max: Double) -> Double {
         return (Double(arc4random()) / 0xFFFFFFFF) * (max - min) + min
     }

@@ -11,6 +11,7 @@ import AVFoundation
 
 class GameOverScreen: SKScene {
 
+        //Variable declarations
         let userDefaults = UserDefaults.standard
         var ResultLabel:SKLabelNode!
         var HighScoreLabel:SKLabelNode!
@@ -20,15 +21,17 @@ class GameOverScreen: SKScene {
         var StoreButton:SKSpriteNode!
         var soundEffectPlayer = AVAudioPlayer()
     
-        override func didMove(to view: SKView) {
+    //didMove is called when GameOverScreen is presented
+    override func didMove(to view: SKView) {
         ResultsButton = self.childNode(withName: "returnButton") as! SKSpriteNode
         ResultLabel = self.childNode(withName: "results") as! SKLabelNode
         YourScoreLabel = self.childNode(withName: "YourScore") as! SKLabelNode
         HighScoreLabel = self.childNode(withName: "HighScore") as! SKLabelNode
-        
+        //hides ScoreLabels by default
         YourScoreLabel.isHidden = true
         HighScoreLabel.isHidden = true
-            
+        
+        //handles displaying results and score labels
         switch GameScene.whoWon {
         case 0:
             ResultLabel.text = "You Won"
@@ -42,6 +45,7 @@ class GameOverScreen: SKScene {
             ResultLabel.text = "Good Job"
             YourScoreLabel.text = "Score: " + String(userDefaults.integer(forKey: "CurrentScore"))
             HighScoreLabel.text = "High Score: " + String(userDefaults.integer(forKey: "HighScore"))
+            //shows hidden labels
             YourScoreLabel.isHidden = false
             HighScoreLabel.isHidden = false
         default:

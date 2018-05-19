@@ -8,6 +8,7 @@
 import SpriteKit
 import GameplayKit
 
+//Game modes
 enum gameType {
     case easy
     case medium
@@ -18,22 +19,22 @@ enum gameType {
 
 class GameScene: SKScene , SKPhysicsContactDelegate{
     
+    //Variable declarations
     var currentGameType = gameType.easy
     var ball = SKSpriteNode()
     var enemy = SKSpriteNode()
     var main = SKSpriteNode()
-    
     var topLabel = SKLabelNode()
     var bottomLabel = SKLabelNode()
-    
     var score = [Int]()
     static var whoWon = 0
-    //single player
-    //0 = You won
-    //1 = opponent won
-    //two player one device
-    //2 = top player won
-    //3 = button pleyer won
+    //whoWon KEY:
+        //single player
+        //0 = You won
+        //1 = opponent won
+        //two player one device
+        //2 = top player won
+        //3 = button pleyer won
     let userDefaults = UserDefaults.standard
     //gameplay tweaking varibles
     let initalBallDelay = 1.5
@@ -43,17 +44,19 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
     let SinglePlayerControlDelay = 0.275
     let easyAIDelay = 1.075 //Balenced
     let mediumAIDelay = 0.9 //Balenced
-    let hardAIDelay = 0.835 
+    let hardAIDelay = 0.835 //Balenced
     let endlessAIDelay = 1.0
-    let minVariation = 0.0 //Dont change this without think through the consequences.
-    let maxVariation = 0.765 //Dont change this without think through the consequences.
-    
+    let minVariation = 0.0
+    let maxVariation = 0.765
     //Perfectly balenced like all things should be... quote - Thanos 2018
     
+    //didMove is called when GameScene is presented
     override func didMove(to view: SKView) {
+        //plays transition sound
         let ButtonTapSound = SKAction.playSoundFileNamed("Selection",waitForCompletion: false)
         run(ButtonTapSound)
         
+        //sets gametype from Mode key
         if (userDefaults.integer(forKey: "Mode")==0){
             currentGameType = gameType.easy
         }else if(userDefaults.integer(forKey: "Mode")==1){
@@ -68,20 +71,20 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
         
         topLabel = self.childNode(withName: "topLabel") as! SKLabelNode
         bottomLabel = self.childNode(withName: "bottomLabel") as! SKLabelNode
-        
         ball = self.childNode(withName: "ball") as! SKSpriteNode
         enemy = self.childNode(withName: "enemy") as! SKSpriteNode
         enemy.position.y = (self.frame.height / 2) - 50
         main = self.childNode(withName: "main") as! SKSpriteNode
         main.position.y = (-self.frame.height / 2) + 50
         
+        //hide enemy score and repositions your score if the game mode is set to endless
         if(currentGameType == gameType.endless){
             topLabel.isHidden = true
             bottomLabel.position = CGPoint(x: 0, y: 25)
         }
         
+        //sets up border physic
         let border  = SKPhysicsBody(edgeLoopFrom: self.frame)
-        
         border.friction = 0
         border.restitution = 1
         self.physicsBody = border
@@ -93,6 +96,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
         score = [0,0]
         topLabel.text = "\(score[1])"
         bottomLabel.text = "\(score[0])"
+        //adds impules to ball after a delay
         let DicideInpulseDirection = Int(arc4random_uniform(UInt32(4))) + 1
             let timer = DispatchTime.now() + initalBallDelay
             DispatchQueue.main.asyncAfter(deadline: timer) {
@@ -112,11 +116,15 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
     }
 
     func addScore(PlayerWhoWon: SKSpriteNode) {
+        //repositions ball and sets velocity to zero
         ball.position = CGPoint(x:0,y:0)
         ball.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+        //randomly choices which direction
         let DicideInpulseDirection = Int(arc4random_uniform(UInt32(4))) + 1
         if PlayerWhoWon == main{
+            //updates score
             score[0] += 1
+            //adds impules to ball after a delay
             let timer = DispatchTime.now() + subsequentBallDelay
             DispatchQueue.main.asyncAfter(deadline: timer) {
             switch(DicideInpulseDirection){
@@ -133,7 +141,9 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
                 }
             }
         }else if PlayerWhoWon == enemy{
+            //updates score
             score[1] += 1
+            //adds impules to ball after a delay
             let timer = DispatchTime.now() + subsequentBallDelay
             DispatchQueue.main.asyncAfter(deadline: timer) {
             switch(DicideInpulseDirection){
@@ -150,6 +160,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
                 }
             }
         }
+        //updates score text
         topLabel.text = "\(score[1])"
         bottomLabel.text = "\(score[0])"
     }
@@ -202,6 +213,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
             break
         }
         
+        //plays sound if ball hits paddel
         if ball.intersects(main)||ball.intersects(enemy){
             let ButtonTapSound = SKAction.playSoundFileNamed("Bounce",waitForCompletion: false)
             run(ButtonTapSound)
@@ -215,7 +227,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
             //255 has to be negative because the ball's positon is negative.
         }
         
-        
+        // add scores
         if ball.position.y <= main.position.y - 30{
             addScore(PlayerWhoWon: enemy)
         }else if ball.position.y >= enemy.position.y + 30 {
@@ -224,7 +236,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
         //Player's score is score[0]
         //Enemy's score is score[1]
         
-        
+        //handles endless
         if(!(currentGameType == gameType.endless)){
         if(score[0] >= 5){
             if (currentGameType == .player2){

@@ -17,4 +17,5 @@ Figure 2: 61st in the Arcade Section
 
 
 ![Figure 3: Gameplay Screenshot](https://github.com/JonathanSwindell/Pong-for-iPhone/assets/15970270/46d0f38b-f47a-44f1-923b-8bc43b5335f9)
+
 Figure 3: Gameplay Screenshot
